@@ -1,0 +1,11 @@
+from collections import Counter
+class Solution:
+    
+    def frequencySort(self, s: str) -> str:
+        frq = Counter(s)
+        
+        def compare(item):
+            return (-frq[item],s.index(item))
+        # news = ""
+        sorted_frq = sorted(s,key = compare)
+        return "".join(sorted_frq)
